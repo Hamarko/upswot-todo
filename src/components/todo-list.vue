@@ -4,13 +4,21 @@
         <div class="todo-list-container">
           <img src="@/assets/logo.png" alt="logo" class="todo-list-logo">          
           <div class="todo-list-content">
-            <h1 class="todo-list-header">Thank you {{user.username}}</h1>            
-            <input 
-              type="text"
-              class="todo-list-input" 
-              placeholder="Enter task"
-              v-model="titleTask"
-            >  
+            <h1 class="todo-list-header">Thank you {{user.username}}</h1> 
+            <div class="main-content-login-text-error">                                               
+              <input 
+                type="text"
+                class="todo-list-input" 
+                placeholder="Enter task"
+                v-model="titleTask"
+              >
+              <div class="main-content-error" v-if="errorPassword">
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 1.29622L9.70378 0L5.49999 4.20377L1.29622 0L0 1.29622L4.20377 5.49999L0 9.70378L1.29622 11L5.49999 6.79623L9.70375 11L11 9.70378L6.79623 5.49999L11 1.29622Z" fill="#D60000"/>
+                </svg>                    
+                <p class="imput-text-error">{{errorPassword}}</p>                 
+              </div>
+            </div>              
             <button 
               class="button"
               @click="createTask"
@@ -44,7 +52,8 @@ export default {
     },
   data() {
     return {
-      title:''
+      title:'',
+      errorPassword:''
     }
   },
   computed: {
@@ -72,8 +81,13 @@ export default {
         title: this.title,
         isDo: false
       }
-      this.CREATE_TASK(task)
-      this.title = ''
+      if(this.title){
+        this.CREATE_TASK(task)
+        this.title = ''
+        this.errorPassword = ''
+      }else{
+        this.errorPassword = 'Title tasks cannot be empty'
+      }
     }
   }
 }

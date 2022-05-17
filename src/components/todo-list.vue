@@ -5,12 +5,13 @@
           <img src="@/assets/logo.png" alt="logo" class="todo-list-logo">          
           <div class="todo-list-content">
             <h1 class="todo-list-header">Thank you {{user.username}}</h1> 
-            <div class="main-content-login-text-error">                                               
+            <div class="form-content" >                                               
               <input 
                 type="text"
                 class="todo-list-input" 
                 placeholder="Enter task"
-                v-model="titleTask"
+                v-model="title"
+                style="width:100%"
               >
               <div class="main-content-error" v-if="errorPassword">
                 <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,15 +58,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['user','tasks']),
-    titleTask:{
-      get(){
-        return this.title
-      },
-      set(newText){
-        this.title = newText
-      }
-    }
+    ...mapGetters(['user','tasks'])    
   },
   methods:{
     ...mapMutations(['DELET_TASK', 'PACH_TASK', 'CREATE_TASK']),

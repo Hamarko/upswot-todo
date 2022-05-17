@@ -52,7 +52,7 @@
                
              </div>
              <div class="main-content-login">
-                <div class="main-content-login-text-error">
+                <div class="form-content">
                   <p class="imput-text">Name</p>               
                   <input class="main-content-login-input" 
                          type="text"
@@ -65,7 +65,7 @@
                      <p class="imput-text-error">{{errorName}}</p>
                   </div>               
                 </div>                
-                <div class="main-content-login-text-error">                               
+                <div class="form-content">                               
                   <p class="imput-text">Password</p>                 
                   <input class="main-content-login-input" 
                          type="text"
@@ -316,7 +316,7 @@ a{
    text-decoration: none;
    color:#056DAE;  
 }
-.main-content-login-text-error{
+.form-content{
    width: 87.5%;
    height: 121px;
 }

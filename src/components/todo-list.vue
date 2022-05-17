@@ -10,8 +10,7 @@
                 type="text"
                 class="todo-list-input" 
                 placeholder="Enter task"
-                v-model="title"
-                style="width:100%"
+                v-model="title"               
               >
               <div class="main-content-error" v-if="errorPassword">
                 <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -129,7 +128,7 @@ export default {
     height: 51px;
     background: #FFFFFF;
     border: 1px solid #9A9A9A;
-    width: 87.5%;
+    width: 100%;
     padding: 0px 0px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;

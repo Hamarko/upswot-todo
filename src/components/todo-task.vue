@@ -90,7 +90,9 @@ export default {
 <style>
 .todo-task {
   display: flex;
-  box-shadow:  0 0 8px 0 #e0e0e0;
+  box-shadow:  0 0 8px 0 #0076c0;
+  min-height: 100px;
+  margin: 10px;
 }
 .todo-task-checkbox{
   flex-direction: column;

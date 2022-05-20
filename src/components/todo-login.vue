@@ -78,7 +78,9 @@
                      <p class="imput-text-error">{{errorPassword}}</p>                 
                   </div>
                 </div>
-                <button class="button" @click="login" >LOGIN</button>
+                <div class="login-button">
+                   <button class="button" @click="login" >LOGIN</button>
+                </div>
                 <p class="login-link"> <router-link to="/todo">Forgot Password</router-link></p>
                 <button class="register-button">Register now</button>
              </div>
@@ -279,10 +281,13 @@ h1{
    font-weight: 300;
    font-size: 18px;  
 }
-.button{
-   width: 87.5%;
-   height: 53px;
+.login-button{
    margin-top: 19px;
+   width: 87.5%;
+}
+.button{
+   width: 100%;
+   height: 53px;
    font-weight: 400;
    font-size: 25px;
    color: #FFFFFF;
@@ -297,7 +302,6 @@ h1{
 .register-button{
     width:100%;
     height: 53px;
-    margin-top: 0;
     font-weight: 400;
     font-size: 25px;
     background: #F6F6F6;

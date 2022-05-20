@@ -12,10 +12,9 @@
       <textarea v-model="textarea" placeholder="Enter note" v-if="isEdit"></textarea>
     </div>               
     <div class="todo-task-button-edit"> 
-      <button class="button"
-            @click="editTask"
-            v-if="!isEdit"
-        >Edit</button>         
+      <div class="edit-button" v-if="!isEdit">
+        <button class="button" @click="editTask">Edit</button>         
+      </div>
       <svg width="23" 
            height="17" 
            viewBox="0 0 23 17" 
@@ -97,12 +96,16 @@ export default {
 .todo-task-checkbox{
   flex-direction: column;
   width: 10%;
-  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .todo-task-text{
   flex-direction: column;
   width: 70%;
-  justify-content: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .todo-task-button-edit{
   display: flex;
@@ -112,6 +115,10 @@ export default {
 }
 textarea {
   width: 100%;
+  height: 87.5%;
   box-sizing: border-box;
+}
+.edit-button{
+  width: 87.5%;
 }
 </style>

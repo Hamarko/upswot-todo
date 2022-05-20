@@ -18,19 +18,21 @@
                 </svg>                    
                 <p class="imput-text-error">{{errorPassword}}</p>                 
               </div>
-            </div>              
-            <button 
-              class="button"
-              @click="createTask"
-            >Add task</button>
-            <div class="todo-list-tasks">
+            </div> 
+            <div class="add-button">
+              <button 
+                class="button"
+                @click="createTask"
+              >Add task</button>
+            </div>             
+            <div class="todo-list-tasks">              
               <todoTask
                 v-for="task in tasks"
                 :key="task.id"
                 :task_props="task"
                 v-on:pachTask="pachTask"
-                v-on:deletTask="deletTask"
-              />
+                v-on:deletTask="deletTask"                
+              />              
             </div>
           </div>
         </div>
@@ -136,6 +138,9 @@ export default {
     font-weight: 300;
     font-size: 18px;  
   
+ }
+ .add-button{
+   width: 87.5%;
  }
  .todo-list-header{   
    font-style: normal;
